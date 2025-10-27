@@ -1,2 +1,14 @@
-cache/
-out/
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+.vscode
+
+
+# Foundry files
+broadcast
+cache_forge
+out
+cache
