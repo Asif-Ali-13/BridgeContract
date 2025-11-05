@@ -1,2 +1,24 @@
-[profile.ci.fuzz]
-runs = 10_000
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+optimizer = true
+optimizer_runs = 200
+via_ir = false
+
+[profile.default.optimizer_details]
+peephole = true
+inliner = true
+jumpdestRemover = true
+orderLiterals = true
+deduplicate = true
+cse = true
+constantOptimizer = true
+
+[rpc_endpoints]
+sepolia_rpc = { endpoint = "${ SEPOLIA_RPC }" }
+celo_rpc = { endpoint = "${ CELO_RPC }" }
+
+[etherscan]
+sepolia = { key = "${ SEPOLIA_API_KEY }" }
+celo = { key = "${ CELO_API_KEY }", url = "https://api.celoscan.io/api" }
